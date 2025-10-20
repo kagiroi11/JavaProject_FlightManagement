@@ -13,21 +13,10 @@ public abstract class Booking {
         this.seatNo = seatNo;
     }
 
-    public String getBookingId() {
-        return bookingId;
-    }
-
-    public String getFlightNo() {
-        return flightNo;
-    }
-
-    public String getPassengerName() {
-        return passengerName;
-    }
-
-    public int getSeatNo() {
-        return seatNo;
-    }
+    public String getBookingId() { return bookingId; }
+    public String getFlightNo() { return flightNo; }
+    public String getPassengerName() { return passengerName; }
+    public int getSeatNo() { return seatNo; }
 
     public abstract void processBooking();
 
