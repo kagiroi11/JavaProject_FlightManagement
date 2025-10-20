@@ -7,14 +7,20 @@ public class Flight {
     private int totalSeats, availableSeats;
     private ArrayList<Integer> bookedSeats;
 
-    public Flight(String flightNo, String source, String destination, String departureTime, int totalSeats) {
+    // Full constructor
+    public Flight(String flightNo, String source, String destination, String departureTime, int totalSeats, int availableSeats) {
         this.flightNo = flightNo;
         this.source = source;
         this.destination = destination;
         this.departureTime = departureTime;
         this.totalSeats = totalSeats;
-        this.availableSeats = totalSeats;
+        this.availableSeats = availableSeats;
         this.bookedSeats = new ArrayList<>();
+    }
+
+    // Overloaded constructor: availableSeats defaults to totalSeats
+    public Flight(String flightNo, String source, String destination, String departureTime, int totalSeats) {
+        this(flightNo, source, destination, departureTime, totalSeats, totalSeats);
     }
 
     public String getFlightNo() { return flightNo; }
@@ -50,6 +56,6 @@ public class Flight {
     @Override
     public String toString() {
         return flightNo + " | " + source + " -> " + destination + " | " + departureTime +
-               " | Available: " + availableSeats + "/" + totalSeats;
+                " | Available: " + availableSeats + "/" + totalSeats;
     }
 }
